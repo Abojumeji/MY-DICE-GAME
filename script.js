@@ -69,6 +69,14 @@ btnRoll.addEventListener('click', function () {
       currentScore += dice;
       document.querySelector(`#current--${activepla}`).textContent =
         currentScore;
+      if (currentScore >= 20) {
+        playing = false;
+        document
+          .querySelector(`.player--${activepla}`)
+          .classList.add('player--winner');
+        document.querySelector(`#score--${activepla}`).textContent =
+          currentScore;
+      }
     } else {
       switchpla();
     }
